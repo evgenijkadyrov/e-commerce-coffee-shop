@@ -1,10 +1,11 @@
 import React from 'react';
-import Cart from "@/components/cart/Cart";
+import Cart from "@/layout/header/cart/Cart";
+
 
 const CartPage = () => {
     return (
         <div>
-           <Cart/>
+        <Cart/>
         </div>
     );
 };

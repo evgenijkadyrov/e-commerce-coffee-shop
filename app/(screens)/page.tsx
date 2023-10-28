@@ -1,9 +1,11 @@
 import Home from "@/components/home/Home";
+import {NextPage} from "next";
 
-export default function HomePage() {
+export const HomePage:NextPage = () => {
     return (
         <main>
             <Home/>
         </main>
     );
-}
+};
+export default HomePage

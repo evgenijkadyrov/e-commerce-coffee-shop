@@ -5,7 +5,7 @@ const Home: FC = () => {
     return (
         <Layout title={"Home"}>
             <div className='flex h-screen w-full items-center justify-center'>
-                <h1 className='text-center text-7xl font-bold text-red-600'>Project</h1>
+                <h1 className='text-center text-7xl font-bold text-red'>Project</h1>
             </div>
         </Layout>
     );

@@ -1,0 +1,24 @@
+.menu{
+  @apply flex items-center gap-0.5
+
+}
+.items {
+  @apply flex justify-between
+}
+.menu nav ul {
+  @apply flex justify-between gap-4
+}
+.menu nav ul li {
+  @apply uppercase tracking-widest
+}
+.menu nav ul li a {
+  @apply relative
+}
+.menu >nav >ul >li >a::after {
+  content:'';
+  @apply w-0 bg-black h-0.5 -bottom-2 absolute left-0 transition-all duration-300
+
+}
+.menu nav ul li a:hover::after{
+  @apply w-full
+}
