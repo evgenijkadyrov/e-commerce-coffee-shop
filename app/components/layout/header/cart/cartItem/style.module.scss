@@ -1,9 +1,32 @@
 .cartItem{
+display: flex;
+ flex-direction: row;
+ margin-bottom: 20px;
 
-}
-.name{
+ .info{
 
-}
-.price{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  align-content: flex-end;
 
+  .name{
+   display: flex;
+   flex-wrap: unset;
+   font-size: medium;
+   margin-bottom: 5px;
+
+
+
+
+  }
+  .price{
+margin-bottom: 5px;
+   font-weight: bold;
+
+  }
  }
+}
+
+

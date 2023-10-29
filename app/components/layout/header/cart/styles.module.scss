@@ -29,5 +29,17 @@ text-transform: uppercase;
   }
 
 }
+.footer{
+margin: 10px;
+
+  div:first-child{
+    color: grey;
+    font-size: medium;
+  }
+  div:last-child{
+    font-size: large;
+    font-weight: bold;
+  }
+}
 
 
