@@ -12,16 +12,15 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/modal";
-import { useTypedSelector } from "@/app/hooks/useTypedSelector";
+import { formatPrice } from "@/layout/header/cart/cartItem/format-price";
+import { useCart } from "@/app/hooks/useCart";
 import { Button } from "@chakra-ui/react";
-import {useSelector} from "react-redux";
 
 const Cart: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const btnRef = React.useRef<HTMLButtonElement>(null);
 
-  //const cart = useTypedSelector((state) => state.cart.items);
-  const cart = useSelector((state) => state.cart.items);
+  const { cart, totalQuantity, totalPrice } = useCart();
 
   return (
     <div className={styles["wrapper-cart"]}>
@@ -30,7 +29,7 @@ const Cart: FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         ref={btnRef}
       >
-        <span className={styles.badge}>1</span>
+        <span className={styles.badge}>{totalQuantity}</span>
         <span className={styles.text}>My basket</span>
       </button>
 
@@ -47,9 +46,13 @@ const Cart: FC = () => {
 
           <DrawerBody maxHeight={"none"}>
             <div className={styles.cart}>
-              {cart.map((item) => (
-                <CartItem key={item.product.id} item={item} />
-              ))}
+              {cart.length !== 0 ? (
+                cart.map((item) => (
+                  <CartItem key={item.product.id} item={item} />
+                ))
+              ) : (
+                <div>Cart is Empty</div>
+              )}
             </div>
           </DrawerBody>
 
@@ -60,13 +63,13 @@ const Cart: FC = () => {
           >
             <div className={styles.footer}>
               <div>Total:</div>
-              <div>100$</div>
+              <div>{formatPrice(totalPrice)} </div>
             </div>
             <Button
-              variant={"outline"}
+              bg={"green.200"}
               margin={6}
               mb={5}
-              _hover={{ backgroundColor: "green", color: "white" }}
+              _hover={{ backgroundColor: "green.500", color: "white" }}
               size={"lg"}
             >
               Buy

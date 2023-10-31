@@ -1,11 +1,11 @@
-import {useDispatch} from "react-redux";
-import {bindActionCreators} from "redux";
-import {cartSlice} from "@/app/store/slice";
-import {useMemo} from "react";
+import { cartSlice } from "@/app/store/slice";
+import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
+
 const rootActions = {
-    ...cartSlice.actions
-}
-export const useActions= ()=>{
-    const dispatch=useDispatch()
-    return useMemo(bindActionCreators(rootActions, dispatch),[dispatch])
-}
+  ...cartSlice.actions,
+};
+export const useActions = () => {
+  const dispatch = useDispatch();
+  return bindActionCreators(rootActions, dispatch);
+};

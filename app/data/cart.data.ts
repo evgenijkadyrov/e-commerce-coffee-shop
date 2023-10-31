@@ -42,7 +42,7 @@ export const products: IProduct[] = [
 export const cart:ICartItem[]=[{
     id:1,
     product:products[0],
-    quantity: 2
+    quantity: 1
 },
     {id:2,
     product:products[2],
