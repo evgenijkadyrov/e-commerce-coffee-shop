@@ -1,20 +1,35 @@
-
 "use client";
 import {IProduct} from "@/app/types/product.interface";
 import {useActions} from "@/app/hooks/useActions";
 import styles from "./styles.module.scss";
-import React, {FC} from "react";
+import {Button} from "@chakra-ui/react";
+import React, {FC, useState} from "react";
 import Image from "next/image";
 import cn from "clsx";
-import {Button} from "@chakra-ui/react";
+import CarouselSizeItem from "@/ui/catalog/carousel/carousel-item/CarouselSizeItem";
+import {SizesType} from "@/app/types/cartitem.interface";
+import CarouselButton from "@/ui/catalog/carousel/carousel-item/CarouselButton";
 
-const CarouselItem: FC<{ product: IProduct }> = ({product}) => {
-    const isActive = product.id === 2;
-    const { addToCart}=useActions()
+interface ICarouselitem{
+    product: IProduct,
+    setSelectedItem:(number)=>void,
+    selectedItem:number|null,
+    isActive:boolean,
+    setIsActive:(boolean)=>void
+}
+const CarouselItem: FC<ICarouselitem> = ({product, selectedItem,setSelectedItem, isActive, setIsActive}) => {
+    const [selectedSize, setSelectedSize]=useState<SizesType>("M")
+const handleActiveItem=()=>{
+
+    setSelectedItem(product.id)
+    setIsActive(!isActive)
+}
+    const Active = product.id === selectedItem;
+    const {addToCart} = useActions();
     return (
-        <div
+        <div onClick={handleActiveItem}
             className={cn(styles.item, {
-                [styles.active]: isActive,
+                [styles.active]: isActive && Active,
             })}
         >
             <div className={styles.image}>
@@ -33,10 +48,12 @@ const CarouselItem: FC<{ product: IProduct }> = ({product}) => {
             {!isActive && (
                 <div className={styles.description}>{product.description}</div>
             )}
-            {isActive &&  <div className={'flex justify-center'}>
-                <Button variant={'outline'} onClick={()=>{addToCart({product, quantity:1})}} bg={"white"}>Add to cart</Button>
-            </div>}
+            {isActive && ( <>
+                    <CarouselSizeItem selectedSize={selectedSize} setSelectedSize={setSelectedSize}/>
+                    <CarouselButton product={product} size={selectedSize}  />
+            </>
 
+            )}
         </div>
     );
 };

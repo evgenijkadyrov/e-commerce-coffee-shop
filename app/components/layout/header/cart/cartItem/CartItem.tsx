@@ -14,6 +14,7 @@ const CartItem:FC<{item:ICartItem}> = ({item}) => {
             <div className={styles.info}>
                 <div className={styles.name}>{item.product.name}</div>
                 <div className={styles.price}>{formatPrice(item.product.price) }</div>
+                <div>{item.size}</div>
             <CartActions item={item}/>
             </div>
 

@@ -38,6 +38,11 @@ display: flex;
     font-style: italic;
     text-align: center;
   }
+  .sizeItems{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
   &.active {
     box-shadow: rgb(131, 175, 131) 0px 10px 36px 2px, rgb(54, 136, 54) 0px 0px 0px 1px;
 
@@ -50,6 +55,12 @@ display: flex;
     .name{
       color:white;
       opacity:1;
+    }
+    .sizeBtn{
+
+      &.active {
+        background-color: #6b9f6b;
+      }
     }
   }
 }

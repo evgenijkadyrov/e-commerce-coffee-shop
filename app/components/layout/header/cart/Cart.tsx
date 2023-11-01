@@ -30,7 +30,7 @@ const Cart: FC = () => {
         ref={btnRef}
       >
         <span className={styles.badge}>{totalQuantity}</span>
-        <span className={styles.text}>My basket</span>
+        <span className={styles.text}>My cart</span>
       </button>
 
       <Drawer
@@ -40,7 +40,7 @@ const Cart: FC = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent backgroundColor={"green.50"}>
+        <DrawerContent backgroundColor={"green.50"} maxWidth={"max"}>
           <DrawerCloseButton />
           <DrawerHeader>Your cart</DrawerHeader>
 
