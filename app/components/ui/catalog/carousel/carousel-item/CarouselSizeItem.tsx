@@ -19,9 +19,9 @@ const CarouselSizeItem:FC<ICarouselSizeItem> = ({selectedSize, setSelectedSize})
 
                  <Button className={cn(styles.sizeBtn,{
                 [styles.active]:selectedSize===el}
-                )} variant={'outline'}  bg={"white"} onClick={(event)=>{
+                )} variant={'outline'}  bg={"white"} onClick={()=>{
                     setSelectedSize(el)
-                    event.stopPropagation()}}>{el}</Button>)
+                   }}>{el}</Button>)
             )}
         </div>
     );
