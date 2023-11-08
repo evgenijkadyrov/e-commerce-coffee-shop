@@ -7,12 +7,12 @@ import styles from "./styles.module.scss";
 import { Button } from "@chakra-ui/react";
 import cn from "clsx";
 
-interface ICarouselSizeItem {
+interface ISizeVariations {
   selectedSize: SizesType;
   setSelectedSize: Dispatch<SetStateAction<SizesType>>;
 }
 
-const CarouselSizeItem: FC<ICarouselSizeItem> = ({
+const SizeVariations: FC<ISizeVariations> = ({
   selectedSize,
   setSelectedSize,
 }) => {
@@ -36,4 +36,4 @@ const CarouselSizeItem: FC<ICarouselSizeItem> = ({
   );
 };
 
-export default CarouselSizeItem;
+export default SizeVariations;

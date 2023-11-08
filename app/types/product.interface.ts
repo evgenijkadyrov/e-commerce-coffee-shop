@@ -4,7 +4,11 @@ export interface IProduct{
     description: string,
     price:number,
     slug:string,
-    reviews:[],
+    reviews:string[],
+    rating:number,
     images: string[]
 
+}
+export interface IProductDetails{
+    product: IProduct
 }

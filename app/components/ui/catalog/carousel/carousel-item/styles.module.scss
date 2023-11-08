@@ -40,12 +40,7 @@
     text-align: center;
   }
 
-  .sizeItems {
-    display: flex;
-    width: 300px;
-    justify-content: space-around;
-    margin-bottom: 30px;
-  }
+
 
   &.active {
     box-shadow: rgb(131, 175, 131) 0px 10px 36px 2px, rgb(54, 136, 54) 0px 0px 0px 1px;
@@ -62,13 +57,20 @@
       opacity: 1;
     }
 
-    .sizeBtn {
 
-      &.active {
+  }
+}
+.sizeItems {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.sizeBtn {
 
-        background-color: #6b9f6b;
+  &.active {
 
-      }
-    }
+    background-color: #6b9f6b;
+
   }
 }

@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 import React, { FC } from "react";
 import {useCart} from "@/app/hooks/useCart";
 
-const CarouselButton: FC<{ product: IProduct; size: SizesType }> = ({
+const AddToCartButton: FC<{ product: IProduct; size: SizesType }> = ({
   product,
   size,
 }) => {
@@ -33,4 +33,4 @@ const CarouselButton: FC<{ product: IProduct; size: SizesType }> = ({
   );
 };
 
-export default CarouselButton;
+export default AddToCartButton;

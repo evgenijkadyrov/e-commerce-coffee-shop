@@ -1,6 +1,6 @@
 "use client";
-import CarouselSizeItem from "@/ui/catalog/carousel/carousel-item/CarouselSizeItem";
-import CarouselButton from "@/ui/catalog/carousel/carousel-item/CarouselButton";
+import SizeVariations from "@/ui/catalog/carousel/carousel-item/SizeVariations";
+import AddToCartButton from "@/ui/catalog/carousel/carousel-item/AddToCartButton";
 import NavButton from "@/ui/catalog/carousel/carousel-item/NavButton";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { SizesType } from "@/app/types/cartitem.interface";
@@ -70,11 +70,11 @@ const CarouselItem: FC<ICarouselItem> = ({
 
       {isActive && (
         <>
-          <CarouselSizeItem
+          <SizeVariations
             selectedSize={selectedSize}
             setSelectedSize={setSelectedSize}
           />
-          <CarouselButton product={product} size={selectedSize} />
+          <AddToCartButton product={product} size={selectedSize} />
           <div className={'text-lg italic m-3'}>
           <Link href={`product/${product.slug}`}>More information</Link>
 
