@@ -1,8 +1,8 @@
 import {Header} from "@/layout/header/Header";
 import styles from "app/components/layout/styles.module.scss";
-import React from "react";
+import React, {FC} from "react";
 
-export const Layout = ({children}) => {
+export const Layout:FC = ({children}) => {
     return (
         <>
             <div className={styles.layout}>

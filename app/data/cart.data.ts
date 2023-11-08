@@ -8,6 +8,7 @@ export const products: IProduct[] = [
     name: "РАФ КОФЕ ТЫКВЕННЫЙ ПАЙ",
     price: 4,
     reviews: [],
+    slug:'raf-pump-pay',
     description:
       "Банан, ваниль, малина, мята, лаванда, каштан, кокос, соленая карамель,",
     images: ["/images/1.png"],
@@ -15,6 +16,7 @@ export const products: IProduct[] = [
   {
     id: 2,
     name: "РАФ КОФЕ ВАНИЛЬНЫЙ ПАЙ",
+    slug:'raf-vanila-pay',
     price: 5,
     reviews: [],
     description: "Банан,  каштан, кокос, соленая карамель,",
@@ -23,6 +25,7 @@ export const products: IProduct[] = [
   {
     id: 3,
     name: "КАПУЧИНО",
+    slug:'capuchino',
     price: 3,
     reviews: [],
     description: "Лаванда, каштан, кокос, соленая карамель,",
@@ -31,6 +34,7 @@ export const products: IProduct[] = [
   {
     id: 4,
     name: "МОКАЧИНО",
+    slug:'mokachino',
     price: 4,
     reviews: [],
     description: "Банан,  мята, лаванда,  соленая карамель,",

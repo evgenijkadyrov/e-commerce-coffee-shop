@@ -1,14 +1,13 @@
 import { ICartItem, SizesType } from "@/app/types/cartitem.interface";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { cart } from "@/app/data/cart.data";
 
 export interface IInitialState {
   items: ICartItem[];
 }
 
 const initialState: IInitialState = {
-  items: cart,
+  items: [],
 };
 
 interface IAddToCart extends Omit<ICartItem, "id"> {
@@ -46,17 +45,17 @@ export const cartSlice = createSlice({
     },
     addToCart: (state, action: PayloadAction<IAddToCart>) => {
 
-    const newArray= state.items.filter(el=>(
-      el.product.id===action.payload.product.id
-    ))
-      if(!newArray)  state.items.push({ id:state.items.length + 1, ...action.payload });
-
-      const isExistSize = newArray.some(
-        item => item.size === action.payload.size);
-      if (!isExistSize) {
+    // const newArray= state.items.filter(el=>(
+    //   el.product.id===action.payload.product.id
+    // ))
+    //   if(!newArray)  state.items.push({ id:state.items.length + 1, ...action.payload });
+    //
+    //   const isExistSize = newArray.some(
+    //     item => item.size === action.payload.size);
+    //   if (!isExistSize) {
 
         state.items.push({ id:state.items.length + 1, ...action.payload });
-      }
+
     },
     removeFromCart: (state, action: PayloadAction<{ id: number }>) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
