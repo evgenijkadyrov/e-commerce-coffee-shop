@@ -2,9 +2,20 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/input";
 import { SearchIcon } from "@chakra-ui/icons";
 import React, { FC, useState } from "react";
+import {useActions} from "@/app/hooks/useActions";
 
 const Search: FC = () => {
   const [search, setSearch] = useState("");
+    const {searchProducts}=useActions()
+
+  const handleSearch= (event)=>{
+      if(event.key === 'Enter'){
+          searchProducts(search)
+          setSearch('')
+      }
+
+  }
+
   return (
     <div className={"flex justify-center items-center w-2/6"}>
       <InputGroup>
@@ -23,7 +34,10 @@ const Search: FC = () => {
             boxShadow: "none",
           }}
           color={"grey"}
+          onKeyDown={event=>handleSearch(event)}
+
         />
+
       </InputGroup>
     </div>
   );

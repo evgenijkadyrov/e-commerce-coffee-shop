@@ -33,11 +33,13 @@ export const cartSlice = createSlice({
       if (item) item.size = size;
     },
     addToCart: (state, action: PayloadAction<IAddToCart>) => {
+
       state.items.push({ id: state.items.length + 1, ...action.payload });
     },
     removeFromCart: (state, action: PayloadAction<{ id: number }>) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
     },
+
   },
 });
 

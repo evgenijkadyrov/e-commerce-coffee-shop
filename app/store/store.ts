@@ -10,8 +10,9 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import {configureStore} from "@reduxjs/toolkit";
-import {cartSlice} from "@/app/store/slice";
+import {cartSlice} from "@/app/store/sliceCart";
 import {combineReducers} from "redux";
+import {productsSlice} from "@/app/store/sliceCatalog";
 
 const persistConfig = {
     key: "coffee-app",
@@ -21,6 +22,7 @@ const persistConfig = {
 // ...
 const rootReducer = combineReducers({
     cart: cartSlice.reducer,
+    catalog: productsSlice.reducer
 
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
