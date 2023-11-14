@@ -1,17 +1,19 @@
 import { SizesType } from "@/app/types/cartitem.interface";
 import { IProduct } from "@/app/types/product.interface";
 import { useActions } from "@/app/hooks/useActions";
+import { useCart } from "@/app/hooks/useCart";
 import { Button } from "@chakra-ui/react";
 import React, { FC } from "react";
-import {useCart} from "@/app/hooks/useCart";
 
 const AddToCartButton: FC<{ product: IProduct; size: SizesType }> = ({
   product,
   size,
 }) => {
   const { addToCart } = useActions();
-  const cart= useCart()
-  const currentItem= cart.cart.find(item=>item.product.id===product.id && item.size===size)
+  const cart = useCart();
+  const currentItem = cart.cart.find(
+    (item) => item.product.id === product.id && item.size === size
+  );
   const handleAddToCart = (e) => {
     addToCart({ product, quantity: 1, size: size });
     e.stopPropagation();
@@ -23,11 +25,9 @@ const AddToCartButton: FC<{ product: IProduct; size: SizesType }> = ({
         onClick={(e) => {
           handleAddToCart(e);
         }}
-       bg={"white"}
-
-
+        bg={"white"}
       >
-          {currentItem? 'Add +1': 'Add to cart'}
+        {currentItem ? "Add +1" : "Add to cart"}
       </Button>
     </div>
   );

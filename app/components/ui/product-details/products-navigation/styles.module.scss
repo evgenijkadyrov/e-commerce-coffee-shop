@@ -1,14 +1,16 @@
-.nav{
+.nav {
   font-size: xxx-large;
   color: #0ea90e;
   opacity: 1;
-  &:hover{
+
+  &:hover {
     opacity: 0.8;
   }
 }
-.disabled{
+
+.disabled {
   pointer-events: none;
   cursor: default;
   text-decoration: none;
-opacity: 0.2;
+  opacity: 0.2;
 }

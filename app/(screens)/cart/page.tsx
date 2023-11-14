@@ -1,13 +1,12 @@
-import React from 'react';
 import Cart from "@/layout/header/cart/Cart";
-
+import React from "react";
 
 const CartPage = () => {
-    return (
-        <div>
-        <Cart/>
-        </div>
-    );
+  return (
+    <div>
+      <Cart />
+    </div>
+  );
 };
 
 export default CartPage;

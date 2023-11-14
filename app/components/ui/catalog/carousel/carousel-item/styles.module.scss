@@ -5,17 +5,18 @@
   width: 350px;
   align-items: center;
   border-radius: 20px;
-  background-color: #c8ccc0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(178, 204, 147)), url('/images/bg-coffee.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
   padding: 15px;
-
 
   .image {
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
   }
 
   .name {
@@ -26,51 +27,53 @@
     margin-bottom: 10px;
     font-size: 25px;
     font-weight: bold;
-    color: #8E8EA1;
+    color: #1f3933;
     opacity: 0.8;
     text-align: center;
-
   }
 
   .description {
     display: flex;
     justify-content: center;
-    font-size: 14px;
+    font-size: 15px;
     font-style: italic;
     text-align: center;
+    color: black;
+    width: 320px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
-
   &.active {
-    box-shadow: rgb(131, 175, 131) 0px 10px 36px 2px, rgb(54, 136, 54) 0px 0px 0px 1px;
-    background-color: #4b7567;
-    background-image: linear-gradient(#779677, rgba(196, 231, 196, 0.77) 50%);
+    box-shadow: rgb(131, 175, 131) 0 10px 36px 2px, rgb(54, 136, 54) 0 0 0 1px;
+    background-image: linear-gradient(#839865, rgb(74, 116, 102) 90%);
     justify-content: center;
     align-items: center;
-
-
     transform: scale(1.1);
 
     .name {
       color: white;
       opacity: 1;
     }
-
-
   }
 }
+
 .sizeItems {
   display: flex;
   width: 300px;
   justify-content: space-around;
   margin-bottom: 30px;
 }
+
 .sizeBtn {
-
   &.active {
-
     background-color: #6b9f6b;
-
+  }
+  &:hover{
+    background-color: #b2eadb;
   }
 }

@@ -38,7 +38,6 @@ const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
         width={"50px"}
         focusBorderColor={"green"}
         bgColor={"white"}
-
       />
       <Button
         {...inc}

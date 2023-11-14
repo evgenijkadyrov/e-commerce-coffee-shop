@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { EnumSorting } from "@/ui/catalog/sorting/enumSorting";
 import Carousel from "@/ui/catalog/carousel/Carousel";
 import { products as data } from "@/app/data/cart.data";

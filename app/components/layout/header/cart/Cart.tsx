@@ -1,7 +1,7 @@
 "use client";
 import CartItem from "@/layout/header/cart/cartItem/CartItem";
-import styles from "./styles.module.scss";
 import React, { FC, useState } from "react";
+import styles from "./styles.module.scss";
 
 import {
   Drawer,
