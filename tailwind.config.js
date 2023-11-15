@@ -2,7 +2,7 @@ const colors= require('tailwindcss/colors')
 const constants = {
   purple: "#6160DC",
   green: "#008D64",
-  'dark-green': "#2e4941",
+  'dark-green': "#497365",
   'light-green': "#b9e7d9",
   orange: "#FFB74A",
   black: "#22242C",
