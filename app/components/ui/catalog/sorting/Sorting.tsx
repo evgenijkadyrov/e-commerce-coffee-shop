@@ -5,6 +5,7 @@ import { EnumSorting } from "@/ui/catalog/sorting/enumSorting";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
+import {useActions} from "@/app/hooks/useActions";
 
 export interface ISorting {
   sortType: EnumSorting;
@@ -12,6 +13,12 @@ export interface ISorting {
 }
 
 const Sorting: FC<ISorting> = ({ sortType, setSortType }) => {
+    const {sortingCatalog}=useActions()
+    const handleSorting=(value)=>{
+
+        setSortType(value)
+        sortingCatalog(value)
+    }
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
@@ -21,7 +28,7 @@ const Sorting: FC<ISorting> = ({ sortType, setSortType }) => {
         {sortingData.map((item, key = item.value) => (
           <MenuItem
             onClick={() => {
-              setSortType(item.value);
+              handleSorting(item.value);
             }}
           >
             {item.label}

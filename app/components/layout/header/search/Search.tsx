@@ -6,11 +6,12 @@ import {useActions} from "@/app/hooks/useActions";
 
 const Search: FC = () => {
   const [search, setSearch] = useState("");
-    const {searchProducts}=useActions()
+    const {searchProducts, sortingCatalog}=useActions()
 
   const handleSearch= (event)=>{
       if(event.key === 'Enter'){
           searchProducts(search)
+
           setSearch('')
       }
 
