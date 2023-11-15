@@ -12,6 +12,7 @@ const initialState: IInitialStateCatalog = {
   products: products,
 };
 const initialProductsState = initialState.products;
+console.log(initialProductsState)
 
 // Define a function that sorts an array of products by a given criterion
 function sortProducts(products: IProduct[], criterion: EnumSorting): IProduct[] {
@@ -44,7 +45,6 @@ export const productsSlice = createSlice({
       });
     },
     sortingCatalog: (state, action: PayloadAction<EnumSorting>) => {
-      // Use the sortProducts function to get a new sorted array
       state.products = sortProducts([...state.products], action.payload);
     },
   },

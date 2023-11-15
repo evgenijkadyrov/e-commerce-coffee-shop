@@ -70,8 +70,8 @@ const CarouselItem: FC<ICarouselItem> = ({
 
       <div className={styles.name}>{product.name}</div>
 
-      {!isActive && (
-        <div className={styles.description}>{product.description}</div>
+      {!isActive && (<Link href={`product/${product.slug}`}> <div className={styles.description} onClick={(e=>e.stopPropagation())}>{product.description}</div></Link>
+
       )}
 
       {isActive && (
