@@ -57,7 +57,7 @@ const ModalBuy: FC<IModalBuy> = ({isOpen, onClose}) => {
                                 <Input type={"tel"} placeholder='Phone number'/>
                             </FormControl>
                         </ModalBody> :
-                        <div className={"ml-5 text-xl"}> Thanks. Your order is confirmed.
+                        <div className={"ml-5 text-xl mr-5"}> Thanks. Your order is confirmed.
                             Please wait for the manager's call.</div>
                     }
                     <ModalFooter>
