@@ -1,21 +1,24 @@
 "use client";
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/input";
-import { SearchIcon } from "@chakra-ui/icons";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+} from "@chakra-ui/input";
+import ButtonResetSearch from "@/components/buttonResetSearch/ButtonResetSearch";
+import { CloseIcon, SearchIcon } from "@chakra-ui/icons";
+import { useActions } from "@/app/hooks/useActions";
 import React, { FC, useState } from "react";
-import {useActions} from "@/app/hooks/useActions";
 
 const Search: FC = () => {
   const [search, setSearch] = useState("");
-    const {searchProducts, sortingCatalog}=useActions()
+  const { searchProducts } = useActions();
 
-  const handleSearch= (event)=>{
-      if(event.key === 'Enter'){
-          searchProducts(search)
-
-          setSearch('')
-      }
-
-  }
+  const handleSearch = (event) => {
+    if (event.key === "Enter") {
+      searchProducts(search);
+    }
+  };
 
   return (
     <div className={"flex justify-center items-center w-2/6"}>
@@ -24,21 +27,24 @@ const Search: FC = () => {
           <SearchIcon color="gray.300" />
         </InputLeftElement>
         <Input
-          type="search"
           variant={"flushed"}
           placeholder="Search"
           focusBorderColor="grey"
           onChange={(e) => setSearch(e.target.value)}
+          on
           value={search}
           _focusVisible={{ borderColor: "#008D64" }}
           _focus={{
             boxShadow: "none",
           }}
           color={"grey"}
-          onKeyDown={event=>handleSearch(event)}
-
+          onKeyDown={(event) => handleSearch(event)}
         />
-
+        <InputRightElement>
+          <ButtonResetSearch setSearch={setSearch}>
+            <CloseIcon color="gray.300" />
+          </ButtonResetSearch>
+        </InputRightElement>
       </InputGroup>
     </div>
   );

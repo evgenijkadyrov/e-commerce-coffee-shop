@@ -1,16 +1,15 @@
 "use client";
+import ProductNotFound from "@/components/productNotFound/ProductNotFound";
 import BreadcrumbProduct from "@/ui/product-details/breadcrumb/Breadcrumb";
 import { EnumSorting } from "@/ui/catalog/sorting/enumSorting";
 import { useAppSelector } from "@/app/hooks/useTypedSelector";
 import Carousel from "@/ui/catalog/carousel/Carousel";
 import Sorting from "@/ui/catalog/sorting/Sorting";
-import { useActions } from "@/app/hooks/useActions";
 import styles from "./styles.module.scss";
 import React, { FC, useState } from "react";
 
 const Catalog: FC = () => {
   const [sortType, setSortType] = useState<EnumSorting>(EnumSorting.OLDEST);
-  const { resetCatalog } = useActions();
   const products = useAppSelector((state) => state.catalog.products);
   return (
     <div className={styles.container}>
@@ -27,16 +26,7 @@ const Catalog: FC = () => {
       {products.length !== 0 ? (
         <Carousel products={products} />
       ) : (
-        <div className={"text-2xl text-dark-green "}>
-          Product not found. <br /> Press{" "}
-          <button
-            onClick={() => resetCatalog()}
-            className={"rounded bg-light-gray text-lg p-1"}
-          >
-            back
-          </button>{" "}
-          to go to catalog.{" "}
-        </div>
+        <ProductNotFound />
       )}
     </div>
   );
