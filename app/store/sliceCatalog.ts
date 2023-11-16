@@ -12,9 +12,7 @@ const initialState: IInitialStateCatalog = {
   products: products,
 };
 const initialProductsState = initialState.products;
-console.log(initialProductsState)
 
-// Define a function that sorts an array of products by a given criterion
 function sortProducts(products: IProduct[], criterion: EnumSorting): IProduct[] {
   switch (criterion) {
     case EnumSorting.NEWEST:

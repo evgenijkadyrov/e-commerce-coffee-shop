@@ -5,4 +5,18 @@
   grid-column-gap: 7.7%;
   grid-row-gap: 45px;
   justify-self: stretch;
+  justify-items: center;
+
+}
+@media (max-width: 974px){
+  .container{
+align-items: center;
+    justify-items: center;
+  }
+}
+@media (max-width: 1577px){
+  .container{
+    align-items: center;
+    justify-items: center;
+  }
 }
