@@ -2,7 +2,8 @@ import { useActions } from "@/app/hooks/useActions";
 import React, { FC } from "react";
 
 interface IButtonResetSearch {
-  setSearch?: (string) => void;
+  setSearch?: (value:string) => void;
+  children:React.ReactNode
 }
 
 const ButtonResetSearch: FC<IButtonResetSearch> = ({ setSearch, children }) => {

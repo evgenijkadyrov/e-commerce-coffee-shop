@@ -3,10 +3,12 @@ import { useProductsNavigation } from "@/app/hooks/useProductsNavigation";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import React from "react";
+import React, {FC} from "react";
 import cn from "clsx";
-
-const ProductsNavigation = ({ productId }) => {
+interface IProductNavigation{
+    productId:number
+}
+const ProductsNavigation:FC<IProductNavigation> = ({ productId }) => {
   const { isNextProductSlug, isPrevProductSlug } =
     useProductsNavigation(productId);
   return (

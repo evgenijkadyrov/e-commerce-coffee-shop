@@ -1,7 +1,7 @@
 import Home from "@/components/home/Home";
 import { NextPage } from "next";
 
-export const Page: NextPage = () => {
+ const Page: NextPage = () => {
   return (
     <main>
       <Home />
