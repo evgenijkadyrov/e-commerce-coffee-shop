@@ -25,8 +25,9 @@ const Sorting: FC<ISorting> = ({ sortType, setSortType }) => {
         {sortType}
       </MenuButton>
       <MenuList>
-        {sortingData.map((item, key = item.value) => (
+        {sortingData.map((item) => (
           <MenuItem
+              key={item.value}
             onClick={() => {
               handleSorting(item.value);
             }}

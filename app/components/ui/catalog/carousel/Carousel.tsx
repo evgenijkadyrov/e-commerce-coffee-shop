@@ -16,7 +16,7 @@ const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={()=>setSelectedItem(null)}>
       {products.map((item, index) => (
         <CarouselItem
           product={item}

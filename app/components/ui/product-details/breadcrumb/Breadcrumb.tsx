@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import React, { FC } from "react";
+import Link from "next/link";
 
 interface IBreadcrumbProduct {
   productName: string;
@@ -9,13 +10,17 @@ const BreadcrumbProduct: FC<IBreadcrumbProduct> = ({ productName }) => {
   return (
     <Breadcrumb>
       <BreadcrumbItem>
-        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        <BreadcrumbLink as={Link} href="/">
+          Home
+        </BreadcrumbLink>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <BreadcrumbLink href="/">Catalog</BreadcrumbLink>
+        <BreadcrumbLink as={Link} href="/">
+          Catalog
+        </BreadcrumbLink>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <BreadcrumbLink isCurrentPage={true}>{productName}</BreadcrumbLink>
+        <BreadcrumbLink isCurrentPage >{productName}</BreadcrumbLink>
       </BreadcrumbItem>
     </Breadcrumb>
   );

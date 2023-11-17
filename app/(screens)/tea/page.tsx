@@ -4,6 +4,7 @@ import {useAppSelector} from "@/app/hooks/useTypedSelector";
 import Carousel from "@/ui/catalog/carousel/Carousel";
 import {Layout} from "@/layout/Layout";
 import React, {FC} from "react";
+import BreadcrumbProduct from "@/ui/product-details/breadcrumb/Breadcrumb";
 
 const Tea: FC = () => {
     const products = useAppSelector((state) => state.catalog.products);
@@ -12,7 +13,9 @@ const Tea: FC = () => {
     );
     return (
         <Layout>
+            <BreadcrumbProduct productName={'Tea'}/>
             <div className={"mt-10"}>
+
                 {products.length !== 0 ? (
                     <Carousel products={teaProducts}/>
                 ) : (

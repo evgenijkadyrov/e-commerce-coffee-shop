@@ -31,14 +31,18 @@ const CarouselItem: FC<ICarouselItem> = ({
 
   return (
     <motion.div
+
       initial={{ scale: 1.0 }}
       animate={isActive ? { scale: 1.12 } : {}}
       transition={{ duration: 0.4, type: "tween" }}
-      onClick={() => setSelectedItem(index)}
+      onClick={(e) => {
+        e.stopPropagation()
+        setSelectedItem(index)}}
       className={cn(styles.item, {
         [styles.active]: isActive,
       })}
-    >
+
+     >
       <div className={styles.image}>
         {isActive && (
           <NavButton
